@@ -1,0 +1,26 @@
+<div class="books-list">
+<!-- Show loading spinner when fetching books -->
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+
+<!-- Background overlay when viewing details -->
+<div *ngIf="selectedBook || detailsLoading" class="book-list-overlay"></div>
+
+<!-- Book list with blur effect -->
+<div class="book-grid" [ngClass]="{'blurred': selectedBook || detailsLoading}">
+  <div (click)="viewDetails(book)" class="book-card" *ngFor="let book of books">
+    <img [src]="book.image" alt="{{ book.title }}" />
+    <h3>{{ book.title }}</h3>
+  </div>
+</div>
+
+<!-- Book details container (shows spinner first, then details) -->
+<div *ngIf="selectedBook || detailsLoading" class="book-details-container">
+  <app-loading-spinner *ngIf="detailsLoading"></app-loading-spinner>
+  <app-book-detail *ngIf="selectedBook && !detailsLoading" 
+                   [book]="selectedBook" 
+                   (close)="selectedBook = null"
+                   (bookDeleted)="onBookDeleted($event)">
+  </app-book-detail>
+</div>
+
+</div>

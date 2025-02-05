@@ -1,0 +1,57 @@
+/* Style the close button */
+.close-btn {
+  color: rgb(251, 8, 8); /* White text */
+  padding: 10px 20px;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.book-detail-container{
+  display: flex;
+  gap: 70px;
+}
+
+.book-info-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.book-detail-container img {
+  width: 120%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+h2{
+  font-family: b;
+  text-align: center;
+  font-size: 30px;
+  margin-left: 40px;
+}
+
+

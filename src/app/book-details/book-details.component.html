@@ -1,0 +1,15 @@
+<div class="book-details-container">
+  <p class="close-btn" (click)="close.emit()"><i class="fa-solid fa-xmark"></i></p> <!-- Close Button -->
+  <div class="book-detail-container">
+    <div class="book-image-container">
+      <img [src]="book.image" alt="{{ book.title }}" />
+      <h2>{{ book.title }}</h2>
+    </div>
+    <div class="book-info-container">
+      <p><strong>Author:</strong> {{ book.author }}</p>
+      <p><strong>Published Date:</strong> {{ book.publishedDate }}</p>
+      <p><strong>Description:</strong> {{ book.description }}</p>
+      <button class="delete-btn" *ngIf="book.id > 20" (click)="deleteBook()">Delete</button>
+    </div>
+  </div>
+</div>

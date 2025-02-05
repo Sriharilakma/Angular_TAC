@@ -1,0 +1,18 @@
+<div class="app-container">
+  <header class="app-header">
+    <nav class="app-nav">
+      <div class="logo-container">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/018/923/667/small/book-opening-illustration-png.png" alt="BMA" class="logo">
+      <h2>SAGA OF GODS <br>&<br>WARRIORS</h2>
+    </div>
+      <div class="nav-links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/add-book" routerLinkActive="active">Add Book</a>
+    </div>
+    </nav>
+  </header>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

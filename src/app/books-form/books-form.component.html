@@ -1,0 +1,71 @@
+<div class="form-container">
+  <h2>Add a New Book</h2>
+  <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)">
+    
+    <!-- Title -->
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input 
+        type="text" id="title" name="title" [(ngModel)]="newBook.title"
+        required #title="ngModel" class="form-control"
+      />
+      <div class="error" *ngIf="title.invalid && title.touched">
+        Title is required.
+      </div>
+    </div>
+
+    <!-- Author -->
+    <div class="form-group">
+      <label for="author">Author:</label>
+      <input 
+        type="text" id="author" name="author" [(ngModel)]="newBook.author"
+        required #author="ngModel" class="form-control"
+      />
+      <div class="error" *ngIf="author.invalid && author.touched">
+        Author is required.
+      </div>
+    </div>
+
+    <!-- Published Date -->
+    <div class="form-group">
+      <label for="publishedDate">Published Date:</label>
+      <input 
+        type="text" id="publishedDate" name="publishedDate" [(ngModel)]="newBook.publishedDate"
+        required #publishedDate="ngModel" class="form-control"
+      />
+      <div class="error" *ngIf="publishedDate.invalid && publishedDate.touched">
+        Published date is required.
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea 
+        id="description" name="description" [(ngModel)]="newBook.description"
+        required #description="ngModel" class="form-control"
+      ></textarea>
+      <div class="error" *ngIf="description.invalid && description.touched">
+        Description is required.
+      </div>
+    </div>
+
+    <!-- Image URL -->
+    <div class="form-group">
+      <label for="image">Image URL:</label>
+      <input 
+        type="url" id="image" name="image" [(ngModel)]="newBook.image"
+        required pattern="https?://.+" #image="ngModel" class="form-control"
+      />
+      <div class="error" *ngIf="image.invalid && image.touched">
+        A valid Image URL is required (starting with http:// or https://).
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn" [disabled]="bookForm.invalid">
+      Add Book
+    </button>
+  </form>
+</div>
+

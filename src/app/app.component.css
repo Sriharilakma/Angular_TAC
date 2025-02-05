@@ -1,0 +1,83 @@
+/* Ensure html and body take the full height and don't scroll */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;  /* Prevent full-page scrolling */
+}
+
+/* The app container with a fixed background */
+.app-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1623771702356-8cd72949bbd7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDMxfHx8ZW58MHx8fHx8");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fixed background */
+  /* Note: Do not set overflow on .app-container here if you want main to scroll separately */
+}
+
+.app-header {
+  background-color: rgba(51, 51, 51, 0.89);
+  color: white;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+  text-align: right;
+}
+
+.app-nav {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.logo-container{
+  display: flex;
+}
+
+.nav-links{
+  margin-top: 13px;
+}
+
+.app-nav a {
+  margin: 15px;
+  text-decoration: none;
+  color: white;
+  font-family: r;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition here */
+}
+
+.app-nav a.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 7px;
+}
+
+.app-nav a:hover {
+  font-weight: bold;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.3); /* Light background on hover */
+  color: #f7f7f8; /* Change text color on hover */
+}
+
+main {
+  margin-top: 5px;
+}
+
+.logo{
+  height: 8vh;
+  width: 8vw;
+}
+
+h2{
+  color: rgb(255, 254, 254);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 13px;
+}
